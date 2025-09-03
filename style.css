@@ -189,3 +189,31 @@ section p {
     font-size: 1.75rem;
   }
 }
+
+/* =============================
+   About Us Section Styling
+============================= */
+.about {
+  background-color: #fff; /* Clean white background for contrast */
+  color: var(--primary-color); /* Navy blue text for authority */
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color); /* Gold headline for prestige */
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
