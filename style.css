@@ -143,9 +143,9 @@ section p {
    Call to Action
 ============================= */
 .cta {
-  background-color: var(--green);
+  background-color: #c59d5f;
   color: var(--white);
-  padding: 3rem 2rem;
+  padding: 1rem 1rem;
 }
 
 /* =============================
