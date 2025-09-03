@@ -92,7 +92,7 @@ ul {
 
 .btn-secondary {
   background-color: var(--white);
-  color: var(--green);
+  color: #101a23;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 4px;
