@@ -272,3 +272,62 @@ section p {
   color: var(--text-color);
 }
 
+
+/* =============================
+   About Us Box Styling with Scroll Reveal
+============================= */
+
+.about {
+  background-color: #f5f6fa; /* matches your bg-light */
+  padding: 4rem 2rem;
+}
+
+.about-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.6s ease-out;
+}
+
+.about-box h2 {
+  color: #c59d5f; /* gold */
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.about-box p {
+  color: #101a23; /* navy */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-box .lead {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #c59d5f;
+  font-weight: bold;
+}
+
+/* =============================
+   Scroll Reveal Animation
+============================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
