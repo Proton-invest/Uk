@@ -308,21 +308,6 @@ section p {
   font-weight: bold;
 }
 
-/* =============================
-   Scroll Reveal Animation
-============================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
 
 
 /* services section*/
