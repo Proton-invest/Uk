@@ -315,7 +315,7 @@ section p {
 
 .services-grid {
   display: flex;
-  gap: 1.5rem;
+  gap: 3.2rem;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2rem;
