@@ -322,39 +322,39 @@ section p {
 }
 
 .service-box {
-  background-color: var(--white);
+  background-color: #101a23;  /* Navy Blue */
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   width: 220px;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--white);
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-box h3 {
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  color: var(--accent-color);
+  color: #c59d5f; /* Gold */
 }
 
 .service-box p {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--text-color);
+  color: var(--white);
 }
 
-/* Hover effect */
+/* Hover effect: gold background, navy text */
 .service-box:hover {
-  background-color: #101a23;
-  color: var(--white);
-  box-shadow: 0 8px 16px rgba(16, 26, 35, 0.6);
+  background-color: #c59d5f;  /* Gold */
+  color: #101a23;             /* Navy Blue text */
+  box-shadow: 0 8px 16px rgba(197, 157, 95, 0.6);
 }
 
 .service-box:hover h3,
 .service-box:hover p {
-  color: var(--white);
+  color: #101a23;  /* Navy Blue on hover */
 }
 
 /* Responsive for smaller screens */
