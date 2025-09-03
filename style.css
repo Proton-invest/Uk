@@ -159,6 +159,22 @@ section p {
   font-size: 0.9rem;
 }
 
+.footer-logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: var(--white);
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
 /* =============================
    Scroll Reveal Animation
 ============================= */
