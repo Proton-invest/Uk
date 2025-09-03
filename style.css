@@ -1,0 +1,117 @@
+:root {
+  --primary-color: #0a2540; /* Navy Blue */
+  --accent-color: #c59d5f; /* Gold */
+  --bg-light: #f5f6fa;
+  --text-color: #333;
+  --white: #fff;
+  --green: #28a745;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+}
+
+/* Forex Ticker */
+.forex-ticker {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #b88b45;
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--green);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  background-color: #e8f5e9;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+  font-style: italic;
+  color: var(--primary-color);
+  border-left: 4px solid var(--accent-color);
+  margin: 2rem auto;
+  padding-left: 1rem;
+  max-width: 600px;
+}
+
+/* Call to Action */
+.cta {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 3rem 2rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
