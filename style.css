@@ -152,7 +152,7 @@ section p {
    Footer
 ============================= */
 .footer {
-  background-color: var(--primary-color);
+  background-color: #101a23;
   color: var(--white);
   text-align: center;
   padding: 1.5rem;
