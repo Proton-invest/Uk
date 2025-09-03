@@ -1,35 +1,58 @@
+/* =============================
+   Root Variables (Color Theory)
+============================= */
 :root {
-  --primary-color: #0a2540; /* Navy Blue */
-  --accent-color: #c59d5f; /* Gold */
-  --bg-light: #f5f6fa;
+  --primary-color: #0a2540;     /* Navy Blue: Trust & Stability */
+  --accent-color: #c59d5f;      /* Gold: Wealth & Prestige */
+  --bg-light: #f5f6fa;          /* Light Background */
   --text-color: #333;
   --white: #fff;
-  --green: #28a745;
+  --green: #28a745;             /* Success & Growth */
+}
+
+/* =============================
+   Reset and Base Styles
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: var(--text-color);
   background-color: var(--bg-light);
+  line-height: 1.6;
 }
 
-/* Forex Ticker */
-.forex-ticker {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  position: relative;
-  z-index: 1000;
-}
-
-/* Container Utility */
+/* =============================
+   Utility
+============================= */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* Hero Section */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* =============================
+   Forex Ticker
+============================= */
+.forex-ticker {
+  background-color: var(--white);
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 1000;
+}
+
+/* =============================
+   Hero Section
+============================= */
 .hero {
   background-color: var(--primary-color);
   color: var(--white);
@@ -47,7 +70,9 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Buttons */
+/* =============================
+   Buttons
+============================= */
 .btn-primary {
   background-color: var(--accent-color);
   color: var(--white);
@@ -55,6 +80,7 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .btn-primary:hover {
@@ -68,29 +94,39 @@ body {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .btn-secondary:hover {
   background-color: #e8f5e9;
 }
 
-/* Sections */
+/* =============================
+   Sections
+============================= */
 section {
   padding: 4rem 2rem;
   text-align: center;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-ul li {
-  margin-bottom: 0.75rem;
+section p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.services ul li {
   font-size: 1.1rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Testimonials */
+/* =============================
+   Testimonials
+============================= */
 .testimonials blockquote {
   font-style: italic;
   color: var(--primary-color);
@@ -100,14 +136,18 @@ ul li {
   max-width: 600px;
 }
 
-/* Call to Action */
+/* =============================
+   Call to Action
+============================= */
 .cta {
   background-color: var(--green);
   color: var(--white);
   padding: 3rem 2rem;
 }
 
-/* Footer */
+/* =============================
+   Footer
+============================= */
 .footer {
   background-color: var(--primary-color);
   color: var(--white);
@@ -116,11 +156,13 @@ ul li {
   font-size: 0.9rem;
 }
 
-
+/* =============================
+   Scroll Reveal Animation
+============================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.visible {
@@ -128,3 +170,19 @@ ul li {
   transform: none;
 }
 
+/* =============================
+   Responsive Design
+============================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.75rem;
+  }
+}
