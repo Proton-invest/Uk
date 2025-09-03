@@ -155,7 +155,7 @@ section p {
   background-color: #101a23;
   color: var(--white);
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
 }
 
@@ -175,6 +175,44 @@ section p {
   text-decoration: underline;
 }
 
+/* New Footer Sections */
+.footer-sections {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.footer-column {
+  min-width: 160px;
+}
+
+.footer-column h4 {
+  color: var(--accent-color);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
 /* =============================
    Scroll Reveal Animation
 ============================= */
