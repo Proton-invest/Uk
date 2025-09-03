@@ -194,26 +194,27 @@ section p {
    About Us Section Styling
 ============================= */
 .about {
-  background-color: #fff; /* Clean white background for contrast */
-  color: var(--primary-color); /* Navy blue text for authority */
+  background-color: #fff; /* Clean background */
+  color: var(--primary-color); /* Strong, professional text */
   padding: 4rem 2rem;
   text-align: center;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .about h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
-  color: var(--accent-color); /* Gold headline for prestige */
-  font-weight: bold;
+  color: var(--accent-color); /* Gold heading for prestige */
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 
 .about p {
-  max-width: 800px;
-  margin: 0 auto;
   font-size: 1.1rem;
-  line-height: 1.75;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-color);
 }
 
