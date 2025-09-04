@@ -373,19 +373,28 @@ section p {
 
 
 /* Carousel styling */
+/* =============================
+   Carousel & Services Section
+============================= */
+
+/* Carousel Wrapper */
 .carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
+/* Carousel Track */
 .carousel {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
 
@@ -393,26 +402,64 @@ section p {
   display: none;
 }
 
-/* Service box styles */
+/* Individual Service Box */
 .service-box {
-  min-width: 250px;
-  flex: 0 0 auto;
+  scroll-snap-align: center;
+  min-width: 280px;
+  max-width: 320px;
   background-color: #101a23;
   color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
   border: 1px solid #333;
+  text-align: center;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  transform: scale(0.9);
+  filter: blur(2px) brightness(0.85);
+  opacity: 0.6;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Active (Center) Box */
+.service-box.active {
+  background-color: #101a23;
+  transform: scale(1.05);
+  filter: none;
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover (Any Box) */
 .service-box:hover {
   background-color: #c59d5f;
   color: #101a23;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.05);
+  filter: none;
 }
 
-/* Carousel buttons */
+/* Hover Headings and Text */
+.service-box:hover h3,
+.service-box:hover p {
+  color: #101a23;
+}
+
+/* Headings and Paragraphs */
+.service-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #c59d5f;
+}
+
+.service-box p {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Carousel Nav Buttons */
 .carousel-btn {
   background-color: rgba(165, 140, 100, 0.4); /* slightly visible */
   color: white;
@@ -421,10 +468,28 @@ section p {
   cursor: pointer;
   font-size: 1.5rem;
   border-radius: 4px;
-  margin: 0 0.5rem;
-  transition: background 0.3s ease;
+  margin: 0 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .carousel-btn:hover {
   background-color: var(--accent-color);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .service-box {
+    min-width: 85%;
+  }
+}
+
