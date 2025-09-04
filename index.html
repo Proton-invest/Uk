@@ -176,9 +176,28 @@
     });
   });
 
-  // Set the footer year
+
+//boxes of investment 
+  function scrollCarousel(direction) {
+  const carousel = document.getElementById("investmentCarousel");
+  const scrollAmount = 300;
+
+  if (direction === 1) {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  } else {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  }
+}
+
+
+
+    // Set the footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+
+
+
 
 </body>
 </html>
