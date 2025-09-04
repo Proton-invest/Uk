@@ -53,30 +53,39 @@
   </div>
 </section>-->
 
-  <!-- ✅ Services -->
-  <section class="services">
+<!-- ✅ Services Carousel -->
+<section class="services">
   <div class="container">
     <h2>Investment Solutions</h2>
-    <div class="services-grid">
-      <div class="service-box">
-        <h3>Wealth Management</h3>
-        <p>Personalized strategies to grow and protect your assets effectively.</p>
+    
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#8592;</button>
+
+      <div class="carousel" id="investmentCarousel">
+        <div class="service-box">
+          <h3>Wealth Management</h3>
+          <p>Personalized strategies to grow and protect your assets effectively.</p>
+        </div>
+        <div class="service-box">
+          <h3>Retirement Planning</h3>
+          <p>Secure your future with tailored retirement investment plans.</p>
+        </div>
+        <div class="service-box">
+          <h3>Portfolio Diversification</h3>
+          <p>Balanced investments to minimize risk and maximize returns.</p>
+        </div>
+        <div class="service-box">
+          <h3>Real Estate & Equity Investments</h3>
+          <p>Access lucrative opportunities in real estate and equity markets.</p>
+        </div>
       </div>
-      <div class="service-box">
-        <h3>Retirement Planning</h3>
-        <p>Secure your future with tailored retirement investment plans.</p>
-      </div>
-      <div class="service-box">
-        <h3>Portfolio Diversification</h3>
-        <p>Balanced investments to minimize risk and maximize returns.</p>
-      </div>
-      <div class="service-box">
-        <h3>Real Estate & Equity Investments</h3>
-        <p>Access lucrative opportunities in real estate and equity markets.</p>
-      </div>
+
+      <button class="carousel-btn next" onclick="scrollCarousel(1)">&#8594;</button>
     </div>
   </div>
 </section>
+
+  
 
   <!-- ✅ Why Choose Us -->
   <section class="why-us">
