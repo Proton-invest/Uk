@@ -1,18 +1,13 @@
-/* =============================
-   Root Variables (Color Theory)
-============================= */
+
 :root {
-  --primary-color: #0a2540;     /* Navy Blue: Trust & Stability */
-  --accent-color: #c59d5f;      /* Gold: Wealth & Prestige */
-  --bg-light: #f5f6fa;          /* Light Background */
+  --primary-color: #0a2540;     
+  --accent-color: #c59d5f;     
+  --bg-light: #f5f6fa;        
   --text-color: #333;
   --white: #fff;
-  --green: #28a745;             /* Success & Growth */
+  --green: #28a745;            
 }
 
-/* =============================
-   Reset and Base Styles
-============================= */
 * {
   margin: 0;
   padding: 0;
@@ -26,9 +21,7 @@ body {
   line-height: 1.6;
 }
 
-/* =============================
-   Utility
-============================= */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -40,9 +33,7 @@ ul {
   padding: 0;
 }
 
-/* =============================
-   Forex Ticker
-============================= */
+
 .forex-ticker {
   background-color: var(--white);
   border-bottom: 1px solid #ddd;
@@ -50,9 +41,7 @@ ul {
   z-index: 1000;
 }
 
-/* =============================
-   Hero Section
-============================= */
+
 .hero {
   background-image: url('https://wallpapercave.com/wp/wp2244501.jpg');
   background-size: cover;
@@ -73,9 +62,7 @@ ul {
   margin-bottom: 2rem;
 }
 
-/* =============================
-   Buttons
-============================= */
+
 .btn-primary {
   background-color: var(--accent-color);
   color: var(--white);
@@ -155,7 +142,7 @@ section p {
   background-color: #101a23;
   color: var(--white);
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 0rem;
   font-size: 0.9rem;
 }
 
@@ -415,12 +402,13 @@ section p {
   text-align: center;
   transition: all 0.4s ease;
   flex-shrink: 0;
-  transform: scale(0.9);
-  filter: blur(2px) brightness(0.85);
-  opacity: 0.6;
+  transform: scale(0.95);
+  filter: brightness(0.9); /* ✅ dim only, no blur */
+  opacity: 0.9;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Active (Center) Box */
 .service-box.active {
@@ -492,4 +480,3 @@ section p {
     min-width: 85%;
   }
 }
-
