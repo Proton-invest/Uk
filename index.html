@@ -167,7 +167,7 @@
 
   <!-- ✅ JavaScript Enhancements -->
 <script>
-  // Smooth scrolling for internal links
+  // ✅ Smooth scrolling for internal links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -181,24 +181,54 @@
     });
   });
 
-
-//boxes of investment 
+  // ✅ Scroll investment carousel left or right
   function scrollCarousel(direction) {
-  const carousel = document.getElementById("investmentCarousel");
-  const scrollAmount = 300;
+    const carousel = document.getElementById("investmentCarousel");
+    const scrollAmount = 300;
 
-  if (direction === 1) {
-    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  } else {
-    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    if (direction === 1) {
+      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
   }
-}
 
+  // ✅ Highlight center box in carousel
+  const carousel = document.getElementById("investmentCarousel");
+  const serviceBoxes = carousel.querySelectorAll(".service-box");
 
+  function updateActiveBox() {
+    const carouselRect = carousel.getBoundingClientRect();
+    const center = carouselRect.left + carouselRect.width / 2;
 
-    // Set the footer year
+    let closestBox = null;
+    let closestDistance = Infinity;
+
+    serviceBoxes.forEach(box => {
+      const boxRect = box.getBoundingClientRect();
+      const boxCenter = boxRect.left + boxRect.width / 2;
+      const distance = Math.abs(center - boxCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestBox = box;
+      }
+    });
+
+    serviceBoxes.forEach(box => box.classList.remove("active"));
+    if (closestBox) closestBox.classList.add("active");
+  }
+
+  carousel.addEventListener("scroll", () => {
+    window.requestAnimationFrame(updateActiveBox);
+  });
+
+  window.addEventListener("load", updateActiveBox);
+
+  // ✅ Set the current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 
 
 
