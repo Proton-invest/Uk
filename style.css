@@ -326,7 +326,7 @@ section p {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  width: 220px;
+  width: 600px;
   text-align: center;
   color: var(--white);
   cursor: pointer;
