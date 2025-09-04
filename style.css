@@ -395,7 +395,7 @@ section p {
 
 /* Service box styles */
 .service-box {
-  min-width: 150px;
+  min-width: 220px;
   flex: 0 0 auto;
   background-color: #101a23;
   color: white;
