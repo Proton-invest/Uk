@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -216,10 +217,8 @@
 
   </div>
 </footer>
-
-  <!-- ✅ JavaScript Enhancements -->
 <script>
-  // ✅ Smooth scrolling for internal links
+  // === Smooth scrolling for internal links ===
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -233,24 +232,17 @@
     });
   });
 
-  // ✅ Scroll investment carousel left or right
-  function scrollCarousel(direction) {
-    const carousel = document.getElementById("investmentCarousel");
-    const scrollAmount = 300;
+  // === Investment carousel logic ===
+  const investmentCarousel = document.getElementById("investmentCarousel");
+  const serviceBoxes = investmentCarousel.querySelectorAll(".service-box");
 
-    if (direction === 1) {
-      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    } else {
-      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    }
+  function scrollInvestmentCarousel(direction) {
+    const scrollAmount = 300;
+    investmentCarousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   }
 
-  // ✅ Highlight center box in carousel
-  const carousel = document.getElementById("investmentCarousel");
-  const serviceBoxes = carousel.querySelectorAll(".service-box");
-
-  function updateActiveBox() {
-    const carouselRect = carousel.getBoundingClientRect();
+  function updateInvestmentActiveBox() {
+    const carouselRect = investmentCarousel.getBoundingClientRect();
     const center = carouselRect.left + carouselRect.width / 2;
 
     let closestBox = null;
@@ -271,31 +263,24 @@
     if (closestBox) closestBox.classList.add("active");
   }
 
-  carousel.addEventListener("scroll", () => {
-    window.requestAnimationFrame(updateActiveBox);
+  investmentCarousel.addEventListener("scroll", () => {
+    window.requestAnimationFrame(updateInvestmentActiveBox);
   });
 
-  window.addEventListener("load", updateActiveBox);
+  window.addEventListener("load", updateInvestmentActiveBox);
 
-  // ✅ Set the current year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-
-
-  // ✅ Set the current year in footer
-  
-  const carousel = document.querySelector('.testimonial-carousel');
-  const boxes = document.querySelectorAll('.testimonial-box');
+  // === Testimonial carousel logic ===
+  const testimonialCarousel = document.querySelector('.testimonial-carousel');
+  const testimonialBoxes = document.querySelectorAll('.testimonial-box');
   const leftArrow = document.getElementById('arrowLeft');
   const rightArrow = document.getElementById('arrowRight');
 
   let scrollIndex = 0;
 
-  function updateActiveBox() {
-    let center = carousel.scrollLeft + carousel.offsetWidth / 2;
+  function updateTestimonialActiveBox() {
+    const center = testimonialCarousel.scrollLeft + testimonialCarousel.offsetWidth / 2;
 
-    boxes.forEach(box => {
+    testimonialBoxes.forEach(box => {
       const boxCenter = box.offsetLeft + box.offsetWidth / 2;
       const distance = Math.abs(center - boxCenter);
       const maxDistance = box.offsetWidth;
@@ -303,11 +288,11 @@
     });
   }
 
-  function scrollToIndex(index) {
-    const box = boxes[index];
+  function scrollToTestimonialIndex(index) {
+    const box = testimonialBoxes[index];
     if (box) {
-      carousel.scrollTo({
-        left: box.offsetLeft - carousel.offsetWidth / 2 + box.offsetWidth / 2,
+      testimonialCarousel.scrollTo({
+        left: box.offsetLeft - testimonialCarousel.offsetWidth / 2 + box.offsetWidth / 2,
         behavior: 'smooth'
       });
     }
@@ -315,59 +300,50 @@
 
   leftArrow.addEventListener('click', () => {
     scrollIndex = Math.max(scrollIndex - 1, 0);
-    scrollToIndex(scrollIndex);
+    scrollToTestimonialIndex(scrollIndex);
   });
 
   rightArrow.addEventListener('click', () => {
-    scrollIndex = Math.min(scrollIndex + 1, boxes.length - 1);
-    scrollToIndex(scrollIndex);
+    scrollIndex = Math.min(scrollIndex + 1, testimonialBoxes.length - 1);
+    scrollToTestimonialIndex(scrollIndex);
   });
 
-  carousel.addEventListener('scroll', updateActiveBox);
-  window.addEventListener('resize', updateActiveBox);
+  testimonialCarousel.addEventListener('scroll', updateTestimonialActiveBox);
+  window.addEventListener('resize', updateTestimonialActiveBox);
   window.addEventListener('load', () => {
-    updateActiveBox();
-    scrollToIndex(0);
-  });
-  
-  // Animate testimonial boxes one by one every 2 seconds
-let currentIndex = 0;
-
-function cycleBoxes() {
-  boxes.forEach((box, i) => {
-    box.classList.toggle('active', i === currentIndex);
+    updateTestimonialActiveBox();
+    scrollToTestimonialIndex(0);
   });
 
-  // Scroll carousel to center the active box smoothly
-  const activeBox = boxes[currentIndex];
-  carousel.scrollTo({
-    left: activeBox.offsetLeft - carousel.offsetWidth / 2 + activeBox.offsetWidth / 2,
-    behavior: 'smooth',
+  // Auto-cycle testimonials every 2 seconds
+  let currentIndex = 0;
+
+  function cycleTestimonialBoxes() {
+    testimonialBoxes.forEach((box, i) => {
+      box.classList.toggle('active', i === currentIndex);
+    });
+
+    const activeBox = testimonialBoxes[currentIndex];
+    testimonialCarousel.scrollTo({
+      left: activeBox.offsetLeft - testimonialCarousel.offsetWidth / 2 + activeBox.offsetWidth / 2,
+      behavior: 'smooth',
+    });
+
+    currentIndex = (currentIndex + 1) % testimonialBoxes.length;
+    scrollIndex = currentIndex;  // Keep scrollIndex synced
+  }
+
+  window.addEventListener('load', () => {
+    cycleTestimonialBoxes();
+    setInterval(cycleTestimonialBoxes, 2000);
   });
 
-  currentIndex = (currentIndex + 1) % boxes.length;
-}
+  // === Set the current year in footer ===
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-// Start cycling after page load, every 2 seconds
-window.addEventListener('load', () => {
-  cycleBoxes();
-  setInterval(cycleBoxes, 2000);
-});
-
-
-  
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68bb0199ddde6f192185533c/1j4d7sgja';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  // === Expose scrollInvestmentCarousel to global scope for inline onclick ===
+  window.scrollCarousel = scrollInvestmentCarousel;
 </script>
-<!--End of Tawk.to Script-->
-</body>
+
+  </body>
 </html>
