@@ -282,6 +282,80 @@
 </script>
 
 
+
+  // ✅ Set the current year in footer
+  
+  const carousel = document.querySelector('.testimonial-carousel');
+  const boxes = document.querySelectorAll('.testimonial-box');
+  const leftArrow = document.getElementById('arrowLeft');
+  const rightArrow = document.getElementById('arrowRight');
+
+  let scrollIndex = 0;
+
+  function updateActiveBox() {
+    let center = carousel.scrollLeft + carousel.offsetWidth / 2;
+
+    boxes.forEach(box => {
+      const boxCenter = box.offsetLeft + box.offsetWidth / 2;
+      const distance = Math.abs(center - boxCenter);
+      const maxDistance = box.offsetWidth;
+      box.classList.toggle('active', distance < maxDistance / 2);
+    });
+  }
+
+  function scrollToIndex(index) {
+    const box = boxes[index];
+    if (box) {
+      carousel.scrollTo({
+        left: box.offsetLeft - carousel.offsetWidth / 2 + box.offsetWidth / 2,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  leftArrow.addEventListener('click', () => {
+    scrollIndex = Math.max(scrollIndex - 1, 0);
+    scrollToIndex(scrollIndex);
+  });
+
+  rightArrow.addEventListener('click', () => {
+    scrollIndex = Math.min(scrollIndex + 1, boxes.length - 1);
+    scrollToIndex(scrollIndex);
+  });
+
+  carousel.addEventListener('scroll', updateActiveBox);
+  window.addEventListener('resize', updateActiveBox);
+  window.addEventListener('load', () => {
+    updateActiveBox();
+    scrollToIndex(0);
+  });
+  
+  // Animate testimonial boxes one by one every 2 seconds
+let currentIndex = 0;
+
+function cycleBoxes() {
+  boxes.forEach((box, i) => {
+    box.classList.toggle('active', i === currentIndex);
+  });
+
+  // Scroll carousel to center the active box smoothly
+  const activeBox = boxes[currentIndex];
+  carousel.scrollTo({
+    left: activeBox.offsetLeft - carousel.offsetWidth / 2 + activeBox.offsetWidth / 2,
+    behavior: 'smooth',
+  });
+
+  currentIndex = (currentIndex + 1) % boxes.length;
+}
+
+// Start cycling after page load, every 2 seconds
+window.addEventListener('load', () => {
+  cycleBoxes();
+  setInterval(cycleBoxes, 2000);
+});
+
+
+  
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
