@@ -115,16 +115,156 @@ section p {
 }
 
 /* =============================
-   Testimonials
+   Testimonials Section
 ============================= */
-.testimonials blockquote {
-  font-style: italic;
-  color: var(--primary-color);
-  border-left: 4px solid var(--accent-color);
-  margin: 2rem auto;
-  padding-left: 1rem;
-  max-width: 600px;
+.testimonials-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
 }
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+}
+
+.testimonial-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 2rem 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-box {
+  scroll-snap-align: center;
+  background-color: #f5f6fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.testimonial-box.active {
+  transform: scale(1.08);
+  opacity: 1;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.testimonial-box p {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.testimonial-box h4 {
+  color: #c59d5f;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-box span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Stars */
+.stars {
+  font-size: 1.2rem;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 3;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:active {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+/* Trustpilot badge */
+.trustpilot-badge {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.trustpilot-badge img {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.trustpilot-badge p {
+  font-size: 1rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .testimonial-carousel {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .testimonial-box {
+    min-width: 260px;
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.7rem;
+  }
+}
+
 
 /* =============================
    Call to Action
